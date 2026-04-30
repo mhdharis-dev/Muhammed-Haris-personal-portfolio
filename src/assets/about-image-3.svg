@@ -1,0 +1,48 @@
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="900" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="700" rx="40" fill="url(#background)" />
+  <circle cx="220" cy="180" r="120" fill="#2563eb" opacity="0.18" />
+  <circle cx="720" cy="120" r="80" fill="#8b5cf6" opacity="0.18" />
+  <circle cx="690" cy="540" r="100" fill="#3b82f6" opacity="0.14" />
+
+  <path d="M130 220c80-90 220-110 320-60c100 50 160 170 120 260c-44 99-167 140-280 110-105-28-186-110-190-210c-2-42 15-82 30-100Z" fill="#ffffff10" />
+  <rect x="160" y="220" width="320" height="260" rx="40" fill="#111827" stroke="#3b82f6" stroke-width="5" />
+  <circle cx="280" cy="300" r="24" fill="#2563eb" />
+  <circle cx="320" cy="300" r="12" fill="#94a3b8" />
+  <rect x="210" y="350" width="220" height="18" rx="9" fill="#3b82f6" />
+  <rect x="210" y="385" width="180" height="14" rx="7" fill="#94a3b8" opacity="0.8" />
+  <rect x="210" y="415" width="240" height="14" rx="7" fill="#94a3b8" opacity="0.8" />
+  <rect x="210" y="445" width="120" height="14" rx="7" fill="#94a3b8" opacity="0.8" />
+  <rect x="210" y="485" width="260" height="18" rx="9" fill="#60a5fa" opacity="0.95" />
+
+  <rect x="490" y="240" width="280" height="190" rx="40" fill="#111827" stroke="#8b5cf6" stroke-width="5" />
+  <rect x="530" y="280" width="200" height="16" rx="8" fill="#3b82f6" />
+  <rect x="530" y="310" width="160" height="14" rx="7" fill="#c7d2fe" />
+  <rect x="530" y="340" width="180" height="14" rx="7" fill="#c7d2fe" />
+  <rect x="530" y="370" width="140" height="14" rx="7" fill="#e0e7ff" />
+  <circle cx="610" cy="430" r="28" fill="#60a5fa" filter="url(#glow)" />
+  <circle cx="660" cy="430" r="18" fill="#8b5cf6" />
+
+  <g opacity="0.9">
+    <rect x="190" y="120" width="340" height="100" rx="30" fill="#111827" stroke="#3b82f6" stroke-width="4" />
+    <text x="360" y="170" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="32" font-weight="700">About</text>
+    <text x="360" y="200" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="16">Flutter • UI/UX • Mobile Apps</text>
+  </g>
+</svg>
