@@ -27,7 +27,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="w-screen h-screen flex items-center justify-center scroll-mt-24">
+    <section id="services" className="w-full min-h-screen py-24 flex items-center justify-center scroll-mt-24 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.h2

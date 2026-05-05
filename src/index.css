@@ -57,24 +57,31 @@
     from {
       width: 0;
     }
+
     to {
       width: 17ch;
     }
   }
 
   @keyframes dots {
-    0%, 22% {
+
+    0%,
+    22% {
       opacity: 0;
       content: '';
     }
+
     25% {
       opacity: 1;
       content: '.';
     }
+
     50% {
       content: '..';
     }
-    75%, 100% {
+
+    75%,
+    100% {
       content: '...';
     }
   }

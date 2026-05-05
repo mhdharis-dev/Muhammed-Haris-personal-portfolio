@@ -4,7 +4,7 @@ import aboutImage from '../assets/about-image-3.svg';
 
 const About = () => {
   return (
-    <section id="about" className="w-screen h-screen flex items-center justify-center scroll-mt-24">
+    <section id="about" className="w-full min-h-screen py-24 flex items-center justify-center scroll-mt-24 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <motion.div
