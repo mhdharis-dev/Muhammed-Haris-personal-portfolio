@@ -123,7 +123,7 @@ const Home = () => {
               <img
                 src="/profile.png"
                 alt="Profile"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover object-top rounded-full"
               />
             </div>
           </div>
