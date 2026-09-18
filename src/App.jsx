@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
@@ -6,13 +7,19 @@ import Portfolio from './components/Portfolio'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ResumeModal from './components/ResumeModal'
 
 function App() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false)
+
+  const handleOpenResume = () => setIsResumeOpen(true)
+  const handleCloseResume = () => setIsResumeOpen(false)
+
   return (
     <>
-      <Navbar />
+      <Navbar onOpenResume={handleOpenResume} />
 
-      <Home />
+      <Home onOpenResume={handleOpenResume} />
 
       <About />
 
@@ -24,7 +31,9 @@ function App() {
 
       <Contact />
 
-      <Footer />
+      <Footer onOpenResume={handleOpenResume} />
+
+      <ResumeModal isOpen={isResumeOpen} onClose={handleCloseResume} />
     </>
   )
 }

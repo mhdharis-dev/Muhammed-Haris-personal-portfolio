@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="typingBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="50%" stop-color="#0369A1" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#typingBg)" />
+  <circle cx="650" cy="120" r="160" fill="#38BDF8" opacity="0.2" />
+  <circle cx="150" cy="400" r="200" fill="#0EA5E9" opacity="0.15" />
+  
+  <g filter="url(#shadow)">
+    <!-- Document Card 1 -->
+    <rect x="220" y="100" width="220" height="290" rx="14" fill="#FFFFFF" opacity="0.95" />
+    <rect x="250" y="140" width="100" height="14" rx="7" fill="#0284C7" />
+    <line x1="250" y1="180" x2="400" y2="180" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round" />
+    <line x1="250" y1="210" x2="380" y2="210" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round" />
+    <line x1="250" y1="240" x2="410" y2="240" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round" />
+    <line x1="250" y1="270" x2="340" y2="270" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Approved Badge Icon -->
+    <circle cx="380" cy="330" r="22" fill="#10B981" />
+    <path d="M370 330 L377 337 L392 322" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Mobile Device Showcase -->
+    <rect x="420" y="150" width="180" height="260" rx="24" fill="#0F172A" stroke="#38BDF8" stroke-width="3" />
+    <rect x="440" y="180" width="140" height="20" rx="10" fill="#0284C7" />
+    <rect x="440" y="215" width="140" height="40" rx="8" fill="#1E293B" />
+    <rect x="440" y="265" width="140" height="40" rx="8" fill="#1E293B" />
+    <rect x="440" y="315" width="140" height="40" rx="8" fill="#1E293B" />
+    <rect x="455" y="375" width="110" height="24" rx="12" fill="#38BDF8" />
+  </g>
+  <text x="400" y="450" font-family="'Nobile', sans-serif" font-size="22" font-weight="bold" fill="#F0F9FF" text-anchor="middle" letter-spacing="2">TYPING &amp; DOCUMENT SERVICES</text>
+</svg>

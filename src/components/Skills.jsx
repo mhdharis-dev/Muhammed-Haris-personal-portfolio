@@ -5,87 +5,102 @@ const skills = [
   { name: 'Flutter', level: 98 },
   { name: 'Dart', level: 90 },
   { name: 'Firebase', level: 89 },
-  { name: 'HTML/CSS', level: 77 },
+  { name: 'HTML / CSS', level: 77 },
   { name: 'JavaScript', level: 70 },
-  { name: 'C', level: 60 },
   { name: 'Tailwind CSS', level: 80 },
-  { name: 'Java', level: 65 },
-  { name: 'UI/UX Design', level: 75 },
   { name: 'Supabase', level: 65 },
+  { name: 'Java / C', level: 65 },
+  { name: 'UI/UX Design', level: 75 },
   { name: 'Git & GitHub', level: 95 },
-
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center py-24">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr] items-center">
+    <section id="skills" className="w-full min-h-screen flex items-center justify-center py-24 bg-[#F4F7FF]">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="grid gap-16 lg:grid-cols-[1fr_1.3fr] items-center">
+          
+          {/* Left Text */}
           <div>
-            <motion.h2
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+              className="mb-3"
             >
-              My Skills
-            </motion.h2>
+              <span className="section-badge">My Skills</span>
+            </motion.div>
+
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-bold text-textPrimary mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1736] mb-6 font-['Nobile'] leading-tight"
             >
               Technical Expertise
             </motion.h3>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-textSecondary text-lg mb-8 leading-relaxed max-w-lg"
+              className="text-[#475569] text-base sm:text-lg mb-8 leading-relaxed"
             >
-              I've spent years honing my skills in mobile and web development. While Flutter is my core expertise, I'm adaptable and proficient across the modern stack, ensuring I can bring any vision to life.
+              I've spent years honing my skills in mobile and web software engineering. While Flutter & Dart are my core domain, I am proficient across full-stack tools, ensuring seamless design-to-code execution.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="p-6 rounded-2xl bg-white border border-[rgba(41,82,227,0.12)] shadow-sm"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center font-bold text-xl">
+                  98%
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#0B1736]">Primary Focus</h4>
+                  <p className="text-xs text-[#64748B]">Cross-Platform Mobile App Development</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          {/* Right Skills Progress Grid */}
+          <div className="grid gap-4 sm:grid-cols-2">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="rounded-3xl bg-surface/30 border border-slate-700/40 p-5 shadow-lg shadow-slate-950/10"
+                transition={{ delay: index * 0.05 }}
+                className="scholo-card p-5"
               >
-                <div className="mb-4">
-                  <div className="flex items-center justify-between mb-2 gap-3">
-                    <span className="text-lg font-semibold text-textPrimary">{skill.name}</span>
-                    <span className="text-sm font-bold text-primary">{skill.level}%</span>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="relative h-4 w-full rounded-full bg-slate-200/20 overflow-hidden border border-slate-700/10">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 + index * 0.08 }}
-                        className="absolute inset-y-0 left-0 h-full rounded-full bg-[#6366f1] shadow-[0_0_20px_rgba(99,102,241,0.35)]"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                      <div
-                        className="absolute top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border-2 border-white bg-[#6366f1] shadow-lg"
-                        style={{ left: `calc(${skill.level}% - 0.75rem)` }}
-                      />
-                    </div>
-                    
-                  </div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-base font-bold text-[#0B1736] font-['Nobile']">{skill.name}</span>
+                  <span className="text-xs font-extrabold text-[#2952E3] bg-[#EEF3FF] px-2.5 py-1 rounded-full border border-[rgba(41,82,227,0.15)]">
+                    {skill.level}%
+                  </span>
+                </div>
+
+                <div className="relative h-3 w-full rounded-full bg-[#EEF3FF] overflow-hidden border border-[rgba(41,82,227,0.1)]">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.2 + index * 0.05 }}
+                    className="h-full rounded-full bg-gradient-to-r from-[#2952E3] to-[#0EA5E9] shadow-[0_0_12px_rgba(41,82,227,0.4)]"
+                  />
                 </div>
               </motion.div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
@@ -93,3 +108,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

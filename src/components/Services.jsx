@@ -4,52 +4,56 @@ import { Smartphone, Layout, Code, Zap } from 'lucide-react';
 
 const services = [
   {
-    icon: <Smartphone size={40} className="text-primary mb-4" />,
+    icon: <Smartphone size={32} className="text-[#2952E3]" />,
     title: 'Mobile App Development',
-    description: 'Building high-performance, cross-platform mobile applications for iOS and Android using Flutter.',
+    description: 'Building high-performance, cross-platform mobile applications for iOS and Android using Flutter & Dart.',
   },
   {
-    icon: <Layout size={40} className="text-secondary mb-4" />,
-    title: 'UI/UX Design',
-    description: 'Designing intuitive, beautiful, and user-centric interfaces that provide exceptional experiences.',
+    icon: <Layout size={32} className="text-[#2952E3]" />,
+    title: 'UI/UX Design Systems',
+    description: 'Designing intuitive, modern, and user-centric interfaces with polished micro-interactions and design tokens.',
   },
   {
-    icon: <Code size={40} className="text-primary mb-4" />,
-    title: 'Custom Software',
-    description: 'Developing tailored software solutions to solve unique business challenges with clean, scalable code.',
+    icon: <Code size={32} className="text-[#2952E3]" />,
+    title: 'Custom Web & Admin Portals',
+    description: 'Developing tailored admin dashboards and web applications integrated with real-time backends like Firebase & Supabase.',
   },
   {
-    icon: <Zap size={40} className="text-secondary mb-4" />,
-    title: 'App Optimization',
-    description: 'Refactoring and optimizing existing apps for better performance, faster load times, and smoother UI.',
+    icon: <Zap size={32} className="text-[#2952E3]" />,
+    title: 'App Optimization & Architecture',
+    description: 'Refactoring state management and optimizing existing apps for peak performance, smoother UI rendering, and clean code principles.',
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="w-full min-h-screen py-24 flex items-center justify-center scroll-mt-24 overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="services" className="w-full min-h-screen py-24 flex items-center justify-center scroll-mt-24 overflow-hidden bg-[#F4F7FF]">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        
+        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+            className="mb-3"
           >
-            Services
-          </motion.h2>
+            <span className="section-badge">Services</span>
+          </motion.div>
+
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-textPrimary"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1736] font-['Nobile']"
           >
             What I Do Best
           </motion.h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Services Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -57,19 +61,35 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-surface p-8 rounded-2xl border border-slate-700 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all group"
+              className="scholo-card p-8 flex flex-col justify-between group"
             >
-              <div className="transform group-hover:-translate-y-2 transition-transform duration-300">
-                {service.icon}
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-[#EEF3FF] border border-[rgba(41,82,227,0.1)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#2952E3] transition-all duration-300">
+                  <div className="group-hover:text-white transition-colors">
+                    {service.icon}
+                  </div>
+                </div>
+
+                <h4 className="text-xl font-bold text-[#0B1736] mb-3 font-['Nobile'] group-hover:text-[#2952E3] transition-colors">
+                  {service.title}
+                </h4>
+
+                <p className="text-[#475569] text-sm leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-textPrimary mb-3">{service.title}</h4>
-              <p className="text-textSecondary leading-relaxed">{service.description}</p>
+
+              <div className="mt-6 pt-4 border-t border-[rgba(11,23,54,0.06)] text-xs font-bold text-[#2952E3] tracking-wider uppercase flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                Learn More &rarr;
+              </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
 };
 
 export default Services;
+

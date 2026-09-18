@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2 } from 'lucide-react';
 
 const Contact = () => {
   const [formStatus, setFormStatus] = useState('');
@@ -37,82 +37,91 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-full min-h-screen flex items-center justify-center py-24 overflow-hidden scroll-mt-24">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="contact" className="w-full min-h-screen flex items-center justify-center py-24 overflow-hidden scroll-mt-24 bg-[#EEF4FD]">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
+        
+        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+            className="mb-3"
           >
-            Contact
-          </motion.h2>
+            <span className="section-badge">Contact</span>
+          </motion.div>
+
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-textPrimary"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1736] font-['Nobile']"
           >
             Let's Work Together
           </motion.h3>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-12">
+          
+          {/* Left Info Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="flex-1 space-y-8"
           >
-            <h4 className="text-2xl font-bold text-textPrimary mb-6">Get In Touch</h4>
-            <p className="text-textSecondary mb-8 leading-relaxed">
-              I'm currently available for freelance work and open to new opportunities. Whether you have a project to discuss or just want to say hi, my inbox is always open.
-            </p>
+            <div>
+              <h4 className="text-2xl font-bold text-[#0B1736] mb-4 font-['Nobile']">Get In Touch</h4>
+              <p className="text-[#475569] text-base leading-relaxed">
+                I'm available for freelance development, mobile app projects, and software engineering collaborations. Reach out via email, phone, or the contact form.
+              </p>
+            </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                  <Mail size={24} />
+            <div className="space-y-4">
+              <div className="bg-white p-4 rounded-2xl border border-[rgba(41,82,227,0.12)] shadow-sm flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center shrink-0">
+                  <Mail size={22} />
                 </div>
                 <div>
-                  <p className="text-sm text-textSecondary">Email</p>
-                  <p className="font-medium text-textPrimary">
-                    <a href="mailto:mhd.haristk@gmail.com" className="hover:text-primary transition-colors">mhd.haristk@gmail.com</a>
-                  </p>
+                  <p className="text-xs font-bold text-[#64748B] uppercase tracking-wider">Email</p>
+                  <a href="mailto:mhd.haristk@gmail.com" className="font-bold text-[#0B1736] hover:text-[#2952E3] transition-colors text-sm sm:text-base">
+                    mhd.haristk@gmail.com
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                  <Phone size={24} />
+
+              <div className="bg-white p-4 rounded-2xl border border-[rgba(41,82,227,0.12)] shadow-sm flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center shrink-0">
+                  <Phone size={22} />
                 </div>
                 <div>
-                  <p className="text-sm text-textSecondary">Phone</p>
-                  <p className="font-medium text-textPrimary">
-                    <a href="tel:+919544234298" className="hover:text-primary transition-colors">+91 9544234298</a>
-                  </p>
+                  <p className="text-xs font-bold text-[#64748B] uppercase tracking-wider">Phone</p>
+                  <a href="tel:+919544234298" className="font-bold text-[#0B1736] hover:text-[#2952E3] transition-colors text-sm sm:text-base">
+                    +91 9544234298
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                  <MapPin size={24} />
+
+              <div className="bg-white p-4 rounded-2xl border border-[rgba(41,82,227,0.12)] shadow-sm flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center shrink-0">
+                  <MapPin size={22} />
                 </div>
                 <div>
-                  <p className="text-sm text-textSecondary">Location</p>
-                  <p className="font-medium text-textPrimary">malappuram, kerala</p>
+                  <p className="text-xs font-bold text-[#64748B] uppercase tracking-wider">Location</p>
+                  <p className="font-bold text-[#0B1736] text-sm sm:text-base">Malappuram, Kerala, India</p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-8 border-t border-slate-700">
-              <h5 className="font-medium text-textPrimary mb-4">Follow Me</h5>
-              <div className="flex gap-4 flex-wrap">
+            <div className="pt-4 border-t border-[rgba(11,23,54,0.08)]">
+              <h5 className="font-bold text-[#0B1736] mb-3 text-sm uppercase tracking-wider font-['Nobile']">Connect Socially</h5>
+              <div className="flex gap-3">
                 <a
                   href="https://www.instagram.com/hariiiissz/?__pwa=1#"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-textSecondary hover:bg-primary hover:text-white transition-all"
+                  className="w-11 h-11 bg-white rounded-full border border-[rgba(41,82,227,0.12)] flex items-center justify-center text-[#475569] hover:bg-[#2952E3] hover:text-white transition-all shadow-sm"
                   aria-label="Instagram"
                 >
                   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -125,7 +134,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/muhammed-haris-/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BoIt8t%2FvwQ6mrwEP89j2SwQ%3D%3D"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-textSecondary hover:bg-primary hover:text-white transition-all"
+                  className="w-11 h-11 bg-white rounded-full border border-[rgba(41,82,227,0.12)] flex items-center justify-center text-[#475569] hover:bg-[#2952E3] hover:text-white transition-all shadow-sm"
                   aria-label="LinkedIn"
                 >
                   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -138,24 +147,24 @@ const Contact = () => {
                   href="https://github.com/mhdharis-dev"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-textSecondary hover:bg-primary hover:text-white transition-all"
+                  className="w-11 h-11 bg-white rounded-full border border-[rgba(41,82,227,0.12)] flex items-center justify-center text-[#475569] hover:bg-[#2952E3] hover:text-white transition-all shadow-sm"
                   aria-label="GitHub"
                 >
                   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M9 19c-5 1.5-5-2.5-7-3" />
-                    <path d="M16 17.5c4 0 5-2 5-6.5 0-4-3-7-8-7s-8 3-8 7c0 4.5 1 6.5 5 6.5" />
-                    <path d="M12 11.5c0 1.4-1.2 2.5-2.7 2.5-1.5 0-2.7-1.1-2.7-2.5 0-1.4 1.2-2.5 2.7-2.5 1.5 0 2.7 1.1 2.7 2.5Z" />
+                    <path d="M18 22v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77a5.07 5.07 0 0 0-1.09-3.5s-1.28-.35-3.03 1.48A13.38 13.38 0 0 0 10 2.5c-3.73-1.83-5-1.48-5-1.48A5.07 5.07 0 0 0 2 4.77 5.44 5.44 0 0 0 1 11.13c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 6.5 18.13V22" />
                   </svg>
                 </a>
               </div>
             </div>
           </motion.div>
 
+          {/* Right Form Column */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 bg-surface p-8 rounded-2xl border border-slate-700 shadow-xl"
+            className="flex-1 scholo-card p-8 sm:p-10"
           >
             <iframe name="googleFormFrame" className="hidden" onLoad={handleIframeLoad} />
             <form
@@ -168,93 +177,91 @@ const Contact = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-textSecondary">Your Name</label>
+                  <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-[#475569]">Your Name</label>
                   <input
                     type="text"
                     id="name"
                     name="entry.1199538803"
                     required
-                    className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-textPrimary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                    className="scholo-input w-full px-4 py-3 text-sm"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-textSecondary">Your Email</label>
+                  <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-[#475569]">Your Email</label>
                   <input
                     type="email"
                     id="email"
                     name="entry.83218755"
                     required
-                    className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-textPrimary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                    className="scholo-input w-full px-4 py-3 text-sm"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
+
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-textSecondary">Subject</label>
+                <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-[#475569]">Subject</label>
                 <input
                   type="text"
                   id="subject"
                   name="entry.1939030911"
                   required
-                  className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-textPrimary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                  className="scholo-input w-full px-4 py-3 text-sm"
                   placeholder="Project Inquiry"
                 />
               </div>
+
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-textSecondary">Message</label>
+                <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[#475569]">Message</label>
                 <textarea
                   id="message"
                   name="entry.2151572"
                   rows="5"
                   required
-                  className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-textPrimary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                  className="scholo-input w-full px-4 py-3 text-sm resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
-              <button type="submit" className="w-full py-4 bg-primary hover:bg-blue-600 text-white rounded-lg font-medium transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+
+              <button type="submit" className="scholo-btn-primary w-full py-4 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
                 Send Message <Send size={18} />
               </button>
-              
             </form>
           </motion.div>
+
         </div>
       </div>
 
+      {/* Success Modal */}
       <AnimatePresence>
         {showPopup && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 px-4 py-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#0B1736]/60 backdrop-blur-sm px-4 py-6"
           >
             <motion.div
-              initial={{ y: 40, opacity: 0, scale: 0.95 }}
+              initial={{ y: 30, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: 20, opacity: 0, scale: 0.97 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="relative w-full max-w-lg overflow-hidden rounded-[32px] border border-white/10 bg-slate-950/95 p-8 shadow-2xl shadow-slate-950/50"
+              exit={{ y: 20, opacity: 0, scale: 0.95 }}
+              className="relative w-full max-w-md overflow-hidden rounded-3xl bg-white p-8 shadow-2xl border border-[rgba(41,82,227,0.15)] text-center"
             >
-              <div className="absolute -left-10 -top-10 h-28 w-28 rounded-full bg-primary/20 blur-2xl" />
-              <div className="absolute -right-10 -bottom-10 h-28 w-28 rounded-full bg-blue-500/10 blur-2xl" />
-              <div className="relative z-10 flex flex-col items-center gap-4 text-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-blue-500 text-white shadow-lg shadow-primary/20">
-                  <Send size={30} />
-                </div>
-                <h3 className="text-3xl font-semibold text-white">Message Sent</h3>
-                <p className="max-w-md text-textSecondary leading-7">
-                  Thanks for reaching out! I’ve received your message, and I’ll reply as soon as possible.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setShowPopup(false)}
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition hover:bg-blue-500"
-                >
-                  Close
-                </button>
+              <div className="w-16 h-16 rounded-full bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center mx-auto mb-4">
+                <CheckCircle2 size={36} />
               </div>
+              <h3 className="text-2xl font-bold text-[#0B1736] mb-2 font-['Nobile']">Message Sent!</h3>
+              <p className="text-[#475569] text-sm mb-6 leading-relaxed">
+                Thank you for reaching out! I've received your message and will get back to you shortly.
+              </p>
+              <button
+                type="button"
+                onClick={() => setShowPopup(false)}
+                className="scholo-btn-primary px-8 py-3 text-xs uppercase tracking-wider font-bold"
+              >
+                Close
+              </button>
             </motion.div>
           </motion.div>
         )}
@@ -264,3 +271,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
