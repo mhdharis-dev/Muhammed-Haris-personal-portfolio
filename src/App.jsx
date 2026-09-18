@@ -8,6 +8,7 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ResumeModal from './components/ResumeModal'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)
@@ -34,6 +35,8 @@ function App() {
       <Footer onOpenResume={handleOpenResume} />
 
       <ResumeModal isOpen={isResumeOpen} onClose={handleCloseResume} />
+
+      <WhatsAppButton />
     </>
   )
 }
