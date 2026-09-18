@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, Sparkles, FileText, Download } from 'lucide-react';
+import { ArrowRight, Phone, Sparkles, FileText, Download, Globe } from 'lucide-react';
 
 const Home = ({ onOpenResume }) => {
   return (
-    <section id="home" className="relative w-full min-h-screen pt-36 pb-24 flex items-center justify-center scroll-mt-24 overflow-hidden bg-[#F4F7FF]">
+    <section id="home" className="relative w-full min-h-screen pt-40 sm:pt-44 pb-24 flex items-center justify-center scroll-mt-24 overflow-hidden bg-[#F4F7FF]">
       {/* Scholomates Ambient Background Glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2952E3]/15 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0EA5E9]/15 rounded-full blur-3xl -z-10"></div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col-reverse md:flex-row items-center gap-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10 lg:gap-12">
         <div className="flex-1 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ const Home = ({ onOpenResume }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#0B1736] leading-tight font-['Nobile'] tracking-tight"
+            className="text-3xl sm:text-5xl md:text-5xl lg:text-7xl font-bold mb-4 text-[#0B1736] leading-tight font-['Nobile'] tracking-tight"
           >
             Muhammed Haris
           </motion.h1>
@@ -44,34 +44,39 @@ const Home = ({ onOpenResume }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-[#475569] mb-10 max-w-lg mx-auto md:mx-0 text-base sm:text-lg leading-relaxed"
+            className="text-[#475569] mb-8 max-w-lg mx-auto md:mx-0 text-base sm:text-lg leading-relaxed"
           >
             Specializing in high-performance Flutter mobile & web architectures. Transforming complex ideas into sleek, scalable, and intuitive digital products.
           </motion.p>
 
+          {/* CTA Action Buttons - Balanced Mobile & Desktop Layout */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap gap-3.5 justify-center md:justify-start"
+            className="flex flex-col xs:flex-row items-stretch xs:items-center justify-center md:justify-start gap-3 w-full max-w-sm xs:max-w-none mx-auto md:mx-0"
           >
-            <a href="#contact" className="scholo-btn-primary px-7 py-3.5 text-sm sm:text-base flex items-center justify-center gap-2">
+            <a href="#contact" className="scholo-btn-primary px-7 py-3.5 text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-[#2952E3]/20">
               Hire Me <ArrowRight size={18} />
             </a>
-            <button
-              onClick={onOpenResume}
-              className="scholo-btn-secondary px-7 py-3.5 text-sm sm:text-base flex items-center justify-center gap-2"
-            >
-              <FileText size={18} className="text-[#2952E3]" /> View Resume
-            </button>
-            <a
-              href="/Muhammed_Haris_Resume.pdf"
-              download="Muhammed_Haris_Resume.pdf"
-              className="scholo-btn-secondary px-5 py-3.5 text-sm flex items-center justify-center gap-2 text-[#475569] hover:text-[#2952E3]"
-              title="Download Resume PDF"
-            >
-              <Download size={18} />
-            </a>
+
+            <div className="flex items-center gap-2 w-full xs:w-auto">
+              <button
+                onClick={onOpenResume}
+                className="scholo-btn-secondary px-6 py-3.5 text-sm sm:text-base flex items-center justify-center gap-2 grow xs:grow-0"
+              >
+                <FileText size={18} className="text-[#2952E3]" /> View Resume
+              </button>
+              <a
+                href="/Muhammed_Haris_Resume.pdf"
+                download="Muhammed_Haris_Resume.pdf"
+                className="scholo-btn-secondary p-3.5 text-sm flex items-center justify-center text-[#475569] hover:text-[#2952E3] shrink-0"
+                title="Download Resume PDF"
+                aria-label="Download Resume PDF"
+              >
+                <Download size={18} />
+              </a>
+            </div>
           </motion.div>
 
           {/* Social Links */}
@@ -79,7 +84,7 @@ const Home = ({ onOpenResume }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-10 flex flex-wrap items-center gap-3 justify-center md:justify-start"
+            className="mt-8 flex flex-wrap items-center gap-3 justify-center md:justify-start"
           >
             <a
               href="https://www.instagram.com/hariiiissz/?__pwa=1#"
@@ -120,6 +125,15 @@ const Home = ({ onOpenResume }) => {
               </svg>
             </a>
             <a
+              href="https://www.scholomates.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2.5 rounded-full bg-[#2952E3]/10 border border-[rgba(41,82,227,0.25)] text-[#2952E3] hover:bg-[#2952E3] hover:text-white transition-all flex items-center gap-2 font-bold text-xs sm:text-sm shadow-sm"
+            >
+              <Globe size={15} />
+              <span>scholomates.com</span>
+            </a>
+            <a
               href="tel:+919544234298"
               className="px-4 py-2.5 rounded-full bg-[#EEF3FF] border border-[rgba(41,82,227,0.15)] text-[#2952E3] hover:bg-[#2952E3] hover:text-white transition-all flex items-center gap-2 font-semibold text-xs sm:text-sm"
             >
@@ -136,7 +150,7 @@ const Home = ({ onOpenResume }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex-1 flex justify-center"
         >
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-80 md:h-80 lg:w-96 lg:h-96">
             <div className="absolute inset-0 bg-gradient-to-br from-[#2952E3] to-[#0EA5E9] rounded-full opacity-20 blur-2xl"></div>
             <div className="w-full h-full rounded-full border-4 border-[#EEF3FF] p-2 relative z-10 overflow-hidden bg-white shadow-[0_20px_48px_rgba(41,82,227,0.15)] flex items-center justify-center">
               <img

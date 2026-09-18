@@ -1,4 +1,5 @@
 import React from 'react';
+import { Globe } from 'lucide-react';
 
 const Footer = ({ onOpenResume }) => {
   return (
@@ -30,6 +31,9 @@ const Footer = ({ onOpenResume }) => {
               <a href="#about" className="hover:text-[#2952E3] transition-colors">About</a>
               <a href="#services" className="hover:text-[#2952E3] transition-colors">Services</a>
               <a href="#portfolio" className="hover:text-[#2952E3] transition-colors">Portfolio</a>
+              <a href="https://www.scholomates.com/" target="_blank" rel="noreferrer" className="hover:text-[#2952E3] transition-colors text-[#2952E3] flex items-center gap-1 font-bold">
+                <Globe size={13} /> ScholoMates
+              </a>
               <button onClick={onOpenResume} className="hover:text-[#2952E3] transition-colors uppercase font-bold text-xs">Resume</button>
               <a href="#contact" className="hover:text-[#2952E3] transition-colors">Contact</a>
             </div>

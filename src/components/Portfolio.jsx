@@ -14,10 +14,10 @@ const projects = [
     title: 'ScholoMates Ecosystem',
     category: 'EdTech & School Management',
     type: 'flutter',
-    description: 'Comprehensive education management ecosystem featuring Admin Dashboards (student, teacher, parent management & events), Teacher Suite (attendance, timetables, marks, PDF reports), and Parent Tracking App.',
+    description: 'ScholoMates (www.scholomates.com) is a full-featured school digitization platform. It unifies Admin Web Dashboards, Teacher Suites (attendance, timetables, marks, PDF reports), and Parent Tracking Apps into a single ecosystem.',
     image: scholoImage,
     tags: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'GoRouter', 'Cloudinary', 'PDF'],
-    link: '#',
+    link: 'https://www.scholomates.com/',
     github: 'https://github.com/mhdharis-dev/ScholoMates'
   },
   {
@@ -72,7 +72,7 @@ const projects = [
     description: 'Admin web portal for educators to manage course schedules, track student performance metrics, generate PDF reports, and handle school queues.',
     image: adminImage,
     tags: ['Flutter Web', 'Firebase', 'Dart'],
-    link: '#',
+    link: 'https://www.scholomates.com/',
     github: 'https://github.com/mhdharis-dev/Scholo-Admin'
   }
 ];
@@ -91,11 +91,11 @@ const Portfolio = () => {
     : projects.filter(p => p.type === filter);
 
   return (
-    <section id="portfolio" className="w-full min-h-screen py-24 flex items-center justify-center scroll-mt-24 overflow-hidden bg-[#EEF4FD]">
+    <section id="portfolio" className="w-full min-h-screen py-16 sm:py-20 lg:py-24 flex items-center justify-center scroll-mt-24 overflow-hidden bg-[#EEF4FD]">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ const Portfolio = () => {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center flex-wrap gap-2.5 mb-12">
+        <div className="flex justify-center flex-wrap gap-2.5 mb-10 sm:mb-12">
           {categories.map((cat) => (
             <button
               key={cat.value}
@@ -138,7 +138,7 @@ const Portfolio = () => {
         </div>
 
         {/* Project Cards Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
               <motion.div
@@ -196,12 +196,12 @@ const Portfolio = () => {
                     <GitBranch size={15} /> Source
                   </a>
                   <a 
-                    href={project.github}
+                    href={project.link !== '#' ? project.link : project.github}
                     target="_blank"
                     rel="noreferrer"
                     className="text-[#2952E3] hover:text-[#1E40C2] flex items-center gap-1 text-xs font-bold uppercase tracking-wider transition-colors"
                   >
-                    View Project <ExternalLink size={14} />
+                    {project.link !== '#' ? 'Live Platform' : 'View Project'} <ExternalLink size={14} />
                   </a>
                 </div>
               </motion.div>

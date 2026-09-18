@@ -37,11 +37,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-full min-h-screen flex items-center justify-center py-24 overflow-hidden scroll-mt-24 bg-[#EEF4FD]">
+    <section id="contact" className="w-full min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 overflow-hidden scroll-mt-24 bg-[#EEF4FD]">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 lg:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,14 +62,14 @@ const Contact = () => {
           </motion.h3>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-12">
           
           {/* Left Info Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 space-y-8"
+            className="flex-1 space-y-6 sm:space-y-8"
           >
             <div>
               <h4 className="text-2xl font-bold text-[#0B1736] mb-4 font-['Nobile']">Get In Touch</h4>
@@ -78,7 +78,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <div className="bg-white p-4 rounded-2xl border border-[rgba(41,82,227,0.12)] shadow-sm flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center shrink-0">
                   <Mail size={22} />
@@ -164,7 +164,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 scholo-card p-8 sm:p-10"
+            className="flex-1 scholo-card p-6 sm:p-8 lg:p-10"
           >
             <iframe name="googleFormFrame" className="hidden" onLoad={handleIframeLoad} />
             <form
@@ -175,7 +175,7 @@ const Contact = () => {
               target="googleFormFrame"
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-[#475569]">Your Name</label>
                   <input

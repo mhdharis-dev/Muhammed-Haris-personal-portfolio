@@ -27,11 +27,11 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="w-full min-h-screen py-24 flex items-center justify-center scroll-mt-24 overflow-hidden bg-[#F4F7FF]">
+    <section id="services" className="w-full min-h-screen py-16 sm:py-20 lg:py-24 flex items-center justify-center scroll-mt-24 overflow-hidden bg-[#F4F7FF]">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 lg:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const Services = () => {
         </div>
 
         {/* Services Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -61,7 +61,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="scholo-card p-8 flex flex-col justify-between group"
+              className="scholo-card p-6 sm:p-7 lg:p-8 flex flex-col justify-between group"
             >
               <div>
                 <div className="w-14 h-14 rounded-2xl bg-[#EEF3FF] border border-[rgba(41,82,227,0.1)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#2952E3] transition-all duration-300">

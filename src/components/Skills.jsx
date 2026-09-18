@@ -16,9 +16,9 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="w-full min-h-screen flex items-center justify-center py-24 bg-[#F4F7FF]">
+    <section id="skills" className="w-full min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 bg-[#F4F7FF]">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1.3fr] items-center">
+        <div className="grid gap-10 md:gap-12 lg:grid-cols-[1fr_1.3fr] items-center">
           
           {/* Left Text */}
           <div>
@@ -36,7 +36,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1736] mb-6 font-['Nobile'] leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1736] mb-4 sm:mb-6 font-['Nobile'] leading-tight"
             >
               Technical Expertise
             </motion.h3>
@@ -46,7 +46,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-[#475569] text-base sm:text-lg mb-8 leading-relaxed"
+              className="text-[#475569] text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 leading-relaxed"
             >
               I've spent years honing my skills in mobile and web software engineering. While Flutter & Dart are my core domain, I am proficient across full-stack tools, ensuring seamless design-to-code execution.
             </motion.p>
@@ -56,7 +56,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="p-6 rounded-2xl bg-white border border-[rgba(41,82,227,0.12)] shadow-sm"
+              className="p-5 sm:p-6 rounded-2xl bg-white border border-[rgba(41,82,227,0.12)] shadow-sm"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center font-bold text-xl">
@@ -71,7 +71,7 @@ const Skills = () => {
           </div>
 
           {/* Right Skills Progress Grid */}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3.5 sm:gap-4 grid-cols-1 sm:grid-cols-2">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}

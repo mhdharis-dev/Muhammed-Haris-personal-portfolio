@@ -37,7 +37,7 @@ const Navbar = ({ onOpenResume }) => {
     };
 
     const handleResize = () => {
-      if (window.innerWidth >= 768) setOpen(false);
+      if (window.innerWidth >= 1024) setOpen(false);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -51,28 +51,28 @@ const Navbar = ({ onOpenResume }) => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 md:px-8 py-3 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 py-3 transition-all duration-300">
       <nav 
         className={`max-w-6xl mx-auto rounded-full transition-all duration-300 ${
           scrolled 
-            ? 'bg-white/85 backdrop-blur-md border border-[rgba(41,82,227,0.15)] shadow-[0_8px_30px_rgb(11,23,54,0.08)] py-3 px-6' 
-            : 'bg-white/60 backdrop-blur-sm border border-transparent py-4 px-6'
+            ? 'bg-white/85 backdrop-blur-md border border-[rgba(41,82,227,0.15)] shadow-[0_8px_30px_rgb(11,23,54,0.08)] py-2.5 px-4 sm:py-3 sm:px-6' 
+            : 'bg-white/60 backdrop-blur-sm border border-transparent py-3 px-4 sm:py-4 sm:px-6'
         }`}
       >
         <div className="flex justify-between items-center">
 
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-full bg-[#2952E3] flex items-center justify-center text-white font-bold text-lg shadow-md shadow-[#2952E3]/25 group-hover:scale-105 transition-transform">
+          <a href="#home" className="flex items-center gap-2 group shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2952E3] flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-md shadow-[#2952E3]/25 group-hover:scale-105 transition-transform">
               H
             </div>
-            <span className="text-xl font-extrabold text-[#0B1736] tracking-tight font-['Nobile']">
+            <span className="text-lg sm:text-xl font-extrabold text-[#0B1736] tracking-tight font-['Nobile']">
               Haris<span className="text-[#2952E3]">.dev</span>
             </span>
           </a>
 
-          {/* Desktop Links with Live Active Scrolling Indicator */}
-          <ul className="hidden md:flex items-center gap-1 bg-[#F4F7FF] p-1.5 rounded-full border border-[rgba(41,82,227,0.1)] relative">
+          {/* Desktop Links (1024px+) */}
+          <ul className="hidden lg:flex items-center gap-1 bg-[#F4F7FF] p-1.5 rounded-full border border-[rgba(41,82,227,0.1)] relative">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -80,7 +80,7 @@ const Navbar = ({ onOpenResume }) => {
                   <a
                     href={link.href}
                     onClick={() => setActiveSection(link.id)}
-                    className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-200 relative block ${
+                    className={`px-4 xl:px-5 py-2 rounded-full text-xs xl:text-sm font-semibold transition-colors duration-200 relative block whitespace-nowrap ${
                       isActive ? 'text-white' : 'text-[#475569] hover:text-[#2952E3]'
                     }`}
                   >
@@ -98,26 +98,26 @@ const Navbar = ({ onOpenResume }) => {
             })}
           </ul>
 
-          {/* Action Buttons */}
-          <div className="hidden md:flex items-center gap-2">
+          {/* Desktop Action Buttons */}
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
             <button
               onClick={onOpenResume}
-              className="scholo-btn-secondary px-4 py-2 text-xs uppercase tracking-wider font-bold inline-flex items-center gap-1.5"
+              className="scholo-btn-secondary px-3.5 py-2 text-xs uppercase tracking-wider font-bold inline-flex items-center gap-1.5"
             >
-              <FileText size={14} /> Resume
+              <FileText size={13} /> Resume
             </button>
             <a
               href="#contact"
-              className="scholo-btn-primary px-5 py-2 text-xs uppercase tracking-wider font-bold inline-flex items-center gap-1.5"
+              className="scholo-btn-primary px-4 py-2 text-xs uppercase tracking-wider font-bold inline-flex items-center gap-1.5"
             >
-              <Sparkles size={14} /> Hire Me
+              <Sparkles size={13} /> Hire Me
             </a>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile/Tablet Drawer Toggle */}
           <button 
             onClick={() => setOpen(!open)} 
-            className="md:hidden w-10 h-10 rounded-full bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center transition-all hover:bg-[#2952E3] hover:text-white"
+            className="lg:hidden w-10 h-10 rounded-full bg-[#EEF3FF] text-[#2952E3] flex items-center justify-center transition-all hover:bg-[#2952E3] hover:text-white"
             aria-label="Toggle menu"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
@@ -125,7 +125,7 @@ const Navbar = ({ onOpenResume }) => {
         </div>
       </nav>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile/Tablet Dropdown */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -133,7 +133,7 @@ const Navbar = ({ onOpenResume }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden max-w-6xl mx-auto mt-2 bg-white rounded-3xl border border-[rgba(41,82,227,0.15)] shadow-xl overflow-hidden p-5"
+            className="lg:hidden max-w-6xl mx-auto mt-2 bg-white rounded-3xl border border-[rgba(41,82,227,0.15)] shadow-xl overflow-hidden p-5"
           >
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => {
@@ -157,13 +157,13 @@ const Navbar = ({ onOpenResume }) => {
                   </li>
                 );
               })}
-              <li className="pt-2 border-t border-[#E2E8F0] flex flex-col gap-2">
+              <li className="pt-2 border-t border-[#E2E8F0] flex flex-col sm:flex-row gap-2">
                 <button
                   onClick={() => {
                     setOpen(false);
                     if (onOpenResume) onOpenResume();
                   }}
-                  className="scholo-btn-secondary block text-center py-3 text-sm font-bold uppercase tracking-wider mt-1 w-full"
+                  className="scholo-btn-secondary block text-center py-3 text-sm font-bold uppercase tracking-wider mt-1 sm:mt-0 w-full"
                 >
                   View Resume
                 </button>
